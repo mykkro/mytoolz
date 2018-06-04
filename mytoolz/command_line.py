@@ -1,3 +1,5 @@
+from collections import OrderedDict
+
 from mytoolz import hello, remove_accents, load_json_data, save_json_data
 import sys, json, pyaml
 
@@ -13,9 +15,10 @@ def remove_accents_cli():
 
 def format_json_cli():
     path = sys.argv[1]
+    with open(path, "r") as infile:
+        data = json.load(infile, object_pairs_hook = OrderedDict)
     if len(sys.argv) > 2:
         outpath = sys.argv[2]
-        save_json_data(load_json_data(path), outpath)
+        save_json_data(data, outpath)
     else:
-        print json.dumps(load_json_data(path), indent=4)
-
+        print json.dumps(data, indent=4)
