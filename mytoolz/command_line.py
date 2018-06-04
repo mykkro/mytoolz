@@ -13,6 +13,9 @@ def remove_accents_cli():
 
 def format_json_cli():
     path = sys.argv[1]
-    outpath = sys.argv[2]
-    save_json_data(load_json_data(path), outpath)
+    if len(sys.argv) > 2:
+        outpath = sys.argv[2]
+        save_json_data(load_json_data(path), outpath)
+    else:
+        print json.dumps(load_json_data(path), indent=4)
 
