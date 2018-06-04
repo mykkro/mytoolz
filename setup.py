@@ -36,7 +36,8 @@ setup(
 	entry_points={
 		"console_scripts": [
 			"mytoolz-hello=mytoolz.command_line:main",
-			"mytoolz-remove-accents=mytoolz.command_line:remove_accents_cli"
+			"mytoolz-remove-accents=mytoolz.command_line:remove_accents_cli",
+			"mytoolz-format-json=mytoolz.command_line:format_json_cli"
 		]
 	},
     include_package_data=True,
