@@ -13,7 +13,7 @@ import unicodedata
 # Methods in version 0.1
 
 def hello():
-    return "Hello, mytoolz!!"
+    return "Hello, mytoolz!"
 
 
 def remove_accents(input_str):
